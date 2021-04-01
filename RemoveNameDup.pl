@@ -11,7 +11,7 @@ open(INPUT, "$input") or die "Can't open \"$input\"\n";
 $ref = $ARGV[1];
 open(REF, "$ref") or die "Can't open \"$ref\"\n";
 
-$output = "$input.withoutkasanari";
+$output = "$input.withoutdup";
 open(OUTPUT, ">$output") or die "Can't open \"$output\"\n";
 
 open(REF, "$ref") or die "Can't open \"$ref\"\n";
