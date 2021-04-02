@@ -10,4 +10,6 @@ qsub -l s_vmem=10G -l mem_req=10G -l /home/hoge/MycoTAP/MycoTAPNIGSuper.sh /home
 
 /home/hoge/MycoTAPRes1 is an output directory of the MycoTAP result.
 
+Please replace hoge with your user name.
+
 You need to edit UNITEREF1, UNITEREF2, and PROGRAMDIR in MycoTAPNIGSuper.sh 
