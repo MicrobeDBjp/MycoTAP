@@ -4,8 +4,8 @@
 # USAGE: this_shell_script input_file output_dir
 # input_file=$1
 # output_dir=$2
-UNITEREF1=/home/hmori/MycoTAP/UNITERefS.20200204.fasta.withspecies.fasta
-UNITEREF2=/home/hmori/MycoTAP/UNITERefS.20200204.fasta.sp.fasta
+UNITEREF1=/home/hmori/MycoTAP/UNITERefS.20200204.fasta.withspecies.fasta.NoN.fasta
+UNITEREF2=/home/hmori/MycoTAP/UNITERefS.20200204.fasta.sp.fasta.NoN.fasta
 PROGRAMDIR=/home/hmori/MycoTAP
 THREAD=1
 LOGFILE="$2/mycotap.log"
