@@ -27,6 +27,6 @@ Please replace hoge with your user name.
 
 You need to edit UNITEREF1, UNITEREF2, and PROGRAMDIR in MycoTAPNIGSuper.sh 
 
-You need to install fastp, seqkit, and vsearch on yourself, and need to add symbolic likn to the PROGRAMDIR.
+You need to install **fastp**, **seqkit**, and **vsearch** on yourself, and **need to add symbolic likn to the PROGRAMDIR**.
 
 You can speedup the MycoTAPLocal calculation by increasing THREAD (default MycoTAPLocal uses 10 threads).
