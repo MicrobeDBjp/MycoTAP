@@ -1,0 +1,13 @@
+Bootstrap: yum
+OSVersion: 7
+MirrorURL: http://mirror.centos.org/centos-%{OSVERSION}/%{OSVERSION}/os/$basearch/
+Include: yum
+
+%environment
+	export PATH=/opt/pkg/singularity/3.7.1/bin:${PATH}
+
+%post
+	yum update -y && \
+        yum install -y libseccomp-devel
+
+
