@@ -38,3 +38,43 @@ You can speedup the MycoTAPLocal calculation by increasing THREAD (default MycoT
 \*.UNITE.97nospecies.withoutdup.species.txt	種までは推定できなかった系統の組成
 
 **ただし、種組成をどの程度正確に推定できているかは現在検証中なので、使用には注意が必要**
+
+
+
+## 【暫定】test.sifの作成
+test.sifが118MBあり、ファイルサイズ上限の25MB以上なのでgithubに直接はアップロードできません。
+
+最終的にはsingularityhub(イメージファイル置き場)に登録するべきですが、暫定の作成方法を記載します。
+
+以下の作業はスパコン上ではなく、sudoが実行可能なローカルサーバーで行う必要があります。
+
+[Local server]$ git clone https://(ユーザー名):(パーソナルアクセストークン)@github.com/MicrobeDBjp/MycoTAP.git MycoTAP-main
+
+[Local server]$ cd MycoTAP-main
+
+[Local server]$ docker build test .
+
+[Local server]$ sudo singularity build test.sif docker-daemon/test:latest
+
+test.sifをローカルサーバーからスパコン上にコピーする。
+
+## スパコン上での実行方法 
+[gw1 ~]$ qlogin
+
+[at 139 ~]$ git clone https://(ユーザー名):(パーソナルアクセストークン)@github.com/MicrobeDBjp/MycoTAP.git MycoTAP-main
+
+[at 139 ~]$ gunzip MycoTAP-main/\*.gz
+
+[at 139 ~]$ chmod +x MycoTAP-main/\*.pl
+
+[at 139 ~]$ mkdir result
+
+[at 139 ~]$ ls
+
+MycoTAP-main
+
+result
+
+test.sif
+
+[at 139 ~]$ singularity exec -B /home/geadmin/ test.sif qsub /home/test-user/MycoTAPNIGSuper.sh MycoTAP-main/DRR053508_1.fastq result/
