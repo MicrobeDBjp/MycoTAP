@@ -4,9 +4,13 @@
 # USAGE: this_shell_script input_file output_dir
 # input_file=$1
 # output_dir=$2
-UNITEREF1=/home/hmori/MycoTAP/UNITERefS.20200204.fasta.withspecies.fasta.NoN.fasta
-UNITEREF2=/home/hmori/MycoTAP/UNITERefS.20200204.fasta.sp.fasta.NoN.fasta
-PROGRAMDIR=/home/hmori/MycoTAP
+UNITEREF1=$PWD/MycoTAP-main/UNITERefS.20200204.fasta.withspecies.fasta.NoN.fasta
+UNITEREF2=$PWD/MycoTAP-main/UNITERefS.20200204.fasta.sp.fasta.NoN.fasta
+PROGRAMDIR=$PWD/MycoTAP-main
+
+export PATH=/opt/pkg/singularity/3.7.1/bin:$PATH
+export PATH=/home/geadmin/UGER/bin/lx-amd64:$PATH
+
 THREAD=1
 LOGFILE="$2/mycotap.log"
 if [ $# -ne 2 ]; then
