@@ -52,7 +52,7 @@ test.sifが118MBあり、ファイルサイズ上限の25MB以上なのでgithub
 
 [Local server]$ cd MycoTAP-main
 
-[Local server]$ docker build test .
+[Local server]$ docker build -t test .
 
 [Local server]$ sudo singularity build test.sif docker-daemon/test:latest
 
