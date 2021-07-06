@@ -1,0 +1,2 @@
+SINGULARITYENV_PATH=/home/geadmin/UGER/bin/lx-amd64:/opt/pkg/singularity/3.7.1/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+SINGULARITY_BINDPATH=/home/geadmin/
