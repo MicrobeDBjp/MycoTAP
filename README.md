@@ -48,9 +48,7 @@ test.sifが118MBあり、ファイルサイズ上限の25MB以上なのでgithub
 
 以下の作業はスパコン上ではなく、sudoが実行可能なローカルサーバーで行う必要があります。
 
-[Local server]$ git clone https://(ユーザー名):(パーソナルアクセストークン)@github.com/MicrobeDBjp/MycoTAP.git MycoTAP-main
-
-[Local server]$ cd MycoTAP-main
+[Local server]$ git clone https://(ユーザー名):(パーソナルアクセストークン)@github.com/MicrobeDBjp/MycoTAP.git  .
 
 [Local server]$ docker build -t test .
 
