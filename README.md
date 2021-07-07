@@ -58,23 +58,16 @@ test.sifが118MBあり、ファイルサイズ上限の25MB以上なのでgithub
 
 test.sifをローカルサーバーからスパコン上にコピーする。
 
-## スパコン上での実行方法 
-[gw1 ~]$ qlogin
+## スパコン上での実行方法
+[at 139 ~]$ mkdir test_dir && cd test_dir
 
-[at 139 ~]$ git clone https://(ユーザー名):(パーソナルアクセストークン)@github.com/MicrobeDBjp/MycoTAP.git MycoTAP-main
+[at 139 test_dir ]$ git clone https://(ユーザー名):(パーソナルアクセストークン)@github.com/MicrobeDBjp/MycoTAP.git  .
 
-[at 139 ~]$ gunzip MycoTAP-main/\*.gz
+or sshに設定したうえで
 
-[at 139 ~]$ chmod +x MycoTAP-main/\*.pl
+[at 139 test_dir]$ git clone git@github.com:MicrobeDBjp/MycoTAP.git
 
-[at 139 ~]$ mkdir result
 
-[at 139 ~]$ ls
+[at 139 test_dir]$ mkdir result
 
-MycoTAP-main
-
-result
-
-test.sif
-
-[at 139 ~]$ singularity exec -B /home/geadmin/ test.sif qsub /home/test-user/MycoTAPNIGSuper.sh MycoTAP-main/DRR053508_1.fastq result/
+[at139 test_dir]$ SINGULARITYENV_PATH=/home/geadmin/UGES/bin/lx-amd64:/opt/pkg/singularity/3.7.1/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin singularity exec -B /home/geadmin/ MycoTAP-dev.sif qsub /home/tazawa-axio/test_dir/ForSuperComputer/MycoTAPNIGSuper.sh DRR053508_1.fastq.gz result/
