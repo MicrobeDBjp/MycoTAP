@@ -56,7 +56,11 @@ test.sifが118MBあり、ファイルサイズ上限の25MB以上なのでgithub
 
 test.sifをローカルサーバーからスパコン上にコピーする。
 
-## スパコン上での実行方法
+
+## スパコン上での実行方法(非git clone)
+[at 139 ~]$ SINGULARITYENV_PATH=/home/geadmin/UGER/bin/lx-amd64:/opt/pkg/singularity/3.7.1/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin singularity exec -B /home/geadmin/ -B /lustre6/public/app/myco-tap/ /lustre6/public/app/myco-tap/MycoTAP-dev20210707.sif qsub /usr/local/bin/MycoTAPNIGSuper.sh /lustre6/public/app/myco-tap/DRR053508_1.fastq.gz $HOME/result/
+
+## （旧）スパコン上での実行方法(git cloneしたフォルダーに依存していた7/6までのバージョン)
 [at 139 ~]$ mkdir test_dir && cd test_dir
 
 [at 139 test_dir ]$ git clone https://(ユーザー名):(パーソナルアクセストークン)@github.com/MicrobeDBjp/MycoTAP.git  .
@@ -68,4 +72,4 @@ or sshに設定したうえで
 
 [at 139 test_dir]$ mkdir result
 
-[at139 test_dir]$ SINGULARITYENV_PATH=/home/geadmin/UGES/bin/lx-amd64:/opt/pkg/singularity/3.7.1/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin singularity exec -B /home/geadmin/ MycoTAP-dev.sif qsub /home/tazawa-axio/test_dir/ForSuperComputer/MycoTAPNIGSuper.sh DRR053508_1.fastq.gz result/
+[at139 test_dir]$ SINGULARITYENV_PATH=/home/geadmin/UGES/bin/lx-amd64:/opt/pkg/singularity/3.7.1/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin singularity exec -B /home/geadmin/ MycoTAP-dev.sif qsub ForSuperComputer/MycoTAPNIGSuper.sh DRR053508_1.fastq.gz result/
