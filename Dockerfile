@@ -20,4 +20,4 @@ COPY RemoveNameDup.pl /usr/local/bin/RemoveNameDup.pl
 RUN chmod +x /usr/local/bin/RemoveNameDup.pl
 
 COPY LICENSE   /home/documents/LICENSE
-COPY README.md /home/docuemnts/README.md
+COPY README.md /home/documents/README.md
